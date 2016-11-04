@@ -1,0 +1,56 @@
+// Accordion to tabs by Frank LANG
+// Live demo: https://jsfiddle.net/frontenddeveloper/nw0daxq3/1/
+
+.nav-accordion2tabs{
+  &-item{
+    > .link{
+      display: block;
+    }
+  }
+  &-sublevel.is-closed{
+    display: none;
+  }
+  &-sublevel{
+    display: block;
+  }
+}
+@media screen and (max-width: 767px){}
+@media screen and (min-width: 768px){
+  .nav-accordion2tabs{
+    display: table;
+    &-item{
+      display: table-cell;
+    }
+    &-sublevel{
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+// skin
+.nav-accordion2tabs{
+  border: 1px solid tomato;
+  padding: 5px;
+  &-item{
+    > .link{
+      border: 1px solid tomato;
+      padding: 15px;
+      &.is-active{
+        background: pink;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .desktop{display: none;}
+}
+@media screen and (min-width: 768px){
+  .mobile{display:none;}
+  .nav-accordion2tabs{
+    &-sublevel{
+      background: pink;
+    }
+  }
+}
